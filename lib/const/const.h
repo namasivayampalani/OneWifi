@@ -69,6 +69,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define C_CGM49 "CGM4981COM"
 #define C_TG4 "TG4482A"
 #define C_WNX "WNXL11BWL"
+/* XE5: AYXE51BWL is the same physical XLE/WNXL11BWL board under a renamed
+ * OEM model identity (MODEL_NUM in /etc/device.properties). Kept as a
+ * separate macro (not a replacement of C_WNX) so is_device_type_xle()
+ * recognizes both the legacy and renamed identity strings. */
+#define C_AYX "AYXE51BWL"
 
 /*
  * ===========================================================================

@@ -238,7 +238,11 @@ bool is_device_type_vbvxer5(void)
 }
 bool is_device_type_xle(void)
 {
-    return is_supported_gateway_device(C_WNX);
+    /* XE5: AYXE51BWL is the renamed-model identity for the same real XLE/
+     * WNXL11BWL board - recognize both so XLE-specific behavior keeps
+     * working regardless of which MODEL_NUM the device is provisioned
+     * with. */
+    return is_supported_gateway_device(C_WNX) || is_supported_gateway_device(C_AYX);
 }
 bool is_device_type_sr203(void)
 {
